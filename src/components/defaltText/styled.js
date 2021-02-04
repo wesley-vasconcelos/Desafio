@@ -1,11 +1,15 @@
-import styled, { css } from 'styled-components'
-import { getPercentageSizeHeight, getPercentageSizeWidth, getRelativeSize } from '../../../utils/utils.js'
+import styled, { css } from "styled-components";
+import {
+  getPercentageSizeHeight,
+  getPercentageSizeWidth,
+  getRelativeSize,
+} from "../../../utils/utils.js";
 
 export const StyledText = styled.Text`
   ${({ type }) =>
     type &&
     css`
-      font-size: ${g => g.theme.text[type]};
+      font-size: ${(g) => g.theme.text[type]};
     `}
   ${({ bold }) =>
     bold &&
@@ -21,16 +25,16 @@ export const StyledText = styled.Text`
     ${({ Scheduled }) =>
     Scheduled &&
     css`
-      background-color: ${g => g.theme.color.button[Scheduled]};
+      background-color: ${(g) => g.theme.color.button[Scheduled]};
       padding: ${getRelativeSize(7)};
       color: #fff;
-      border-radius: ${g => g.theme.radius.large};
+      border-radius: ${(g) => g.theme.radius.large};
     `};
 
   ${({ Card }) =>
     Card &&
     css`
-      background-color: ${g => g.theme.color.button[Card]};
+      background-color: ${(g) => g.theme.color.button[Card]};
       padding: ${getRelativeSize(5)};
     `};
 
@@ -47,7 +51,7 @@ export const StyledText = styled.Text`
   ${({ themeColor }) =>
     themeColor &&
     css`
-      color: ${g => g.theme.color.text[themeColor]};
+      color: ${(g) => g.theme.color.text[themeColor]};
     `}
   ${({ color }) =>
     color &&
@@ -101,4 +105,4 @@ export const StyledText = styled.Text`
       background-color: #fff;
       padding-horizontal: ${getPercentageSizeHeight(1)}px;
     `}
-`
+`;

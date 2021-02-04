@@ -1,16 +1,26 @@
 import styled, { css } from "styled-components";
 
 export const Container = styled.View`
-  flex: 1;
-  background-color: ${(g) => g.theme.color.button.whitePure};
-  align-items: center;
-`;
-
-export const Product = styled.View`
-  flex: 0.5;
   background-color: ${(g) => g.theme.color.button.primary};
+  flex: 1;
   align-items: center;
-  flex-direction: row;
-  width: 100%;
-
 `;
+
+export const List = styled.View`
+  width: 90%;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+`;
+
+export const Product = styled.TouchableOpacity`
+  width: 30%;
+  height: 150px;
+  margin: 15px 0;
+`;
+
+export const Image = styled.Image`
+  height: 150px;
+  margin: 15px 0;
+`;
+

@@ -5,4 +5,3 @@ export const Container = styled.View`
   background-color: ${(g) => g.theme.color.button.primary};
   align-items: center;
 `;
-

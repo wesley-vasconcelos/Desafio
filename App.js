@@ -1,17 +1,20 @@
 import * as React from "react";
-import { ThemeProvider } from 'styled-components'
+import { Provider } from "react-redux";
+import { ThemeProvider } from "styled-components";
 import Navigation from "./src/navigation/navigation.js";
-import Home from "./src/screens/Home/index.js";
-import theme from './theme'
+import theme from "./theme";
+import store from "./src/redux";
 
-const  App = () => {
-  console.disableYellowBox = true
+const App = () => {
+  console.disableYellowBox = true;
 
   return (
-    <ThemeProvider theme={theme}>
-     <Navigation />
-    </ThemeProvider>
+    <Provider store={store}>
+      <ThemeProvider theme={theme}>
+        <Navigation />
+      </ThemeProvider>
+    </Provider>
   );
-}
+};
 
-export default  App
+export default App;

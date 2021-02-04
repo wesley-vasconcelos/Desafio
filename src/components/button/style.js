@@ -14,7 +14,8 @@ export const Container = styled.View`
     `}
 `
 export const FixIcon = styled.View`
- padding-right: ${getRelativeSize(15)};
+ align-items: center;
+  justify-content: center;
 `
 
 export const StyledButton = styled.TouchableOpacity`
@@ -117,6 +118,11 @@ export const StyledButton = styled.TouchableOpacity`
     mTop &&
     css`
       margin-top: ${getRelativeSize(mTop)};
+    `}
+    ${({ mLeft }) =>
+    mLeft &&
+    css`
+      margin-left: ${getRelativeSize(mLeft)};
     `}
     ${({ mBottom }) =>
     mBottom &&

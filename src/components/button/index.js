@@ -1,9 +1,9 @@
-import React from 'react'
-import { Container, StyledButton, FixIcon } from './style'
-import PropTypes from 'prop-types'
-import { AntDesign } from '@expo/vector-icons'; 
-import theme from '../../../theme';
-import DefaultText from '../defaltText/index.js';
+import React from "react";
+import { Container, StyledButton, FixIcon } from "./style";
+import PropTypes from "prop-types";
+import { AntDesign } from "@expo/vector-icons";
+import theme from "../../../theme";
+import DefaultText from "../defaltText/index.js";
 
 const Button = ({
   center,
@@ -14,6 +14,7 @@ const Button = ({
   text,
   bold,
   Ant,
+  heart,
   type,
   flexEnd,
   onPress,
@@ -21,12 +22,33 @@ const Button = ({
 }) => {
   return (
     <Container center={center} flexEnd={flexEnd}>
-      <StyledButton onPress={!loading && onPress} {...rest} loading outline={outline} color={color}>
-    {Ant && 
-    <FixIcon>
+      <StyledButton
+        onPress={!loading && onPress}
+        {...rest}
+        loading
+        outline={outline}
+        color={color}
+      >
+        {Ant && (
+          <FixIcon>
+            <AntDesign
+              name="plus"
+              size={20}
+              color={theme.color.general.whitePure}
+            />
+          </FixIcon>
+        )}
+         {heart && (
+          <FixIcon>
+               <AntDesign
+          name= "hearto"
+          size={20}
+          color={theme.color.general.whitePure}
 
-    <AntDesign name="plus" size={20} color={theme.color.general.whitePure} /> 
-    </FixIcon>}
+          />
+            
+          </FixIcon>
+        )}
         {!!loading ? (
           <Loading center />
         ) : children ? (
@@ -36,14 +58,14 @@ const Button = ({
             white={!outline}
             themeColor={color}
             bold={bold}
-            type={type || 'label'}
+            type={type || "label"}
             text={text}
           />
         )}
       </StyledButton>
     </Container>
-  )
-}
+  );
+};
 
 Button.propTypes = {
   text: PropTypes.string,
@@ -59,6 +81,6 @@ Button.propTypes = {
   background: PropTypes.string,
   later: PropTypes.bool,
   BackgroundWhite: PropTypes.bool,
-}
+};
 
-export default Button
+export default Button;

@@ -14,7 +14,6 @@ const colors = {
   cardError: "#ffff",
   textError: "#ffff",
   caution: "#CDC0B0",
-
 };
 
 const theme = {

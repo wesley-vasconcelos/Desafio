@@ -1,10 +1,10 @@
-import React from 'react'
-import { StyledText } from './styled'
-import PropTypes from 'prop-types'
-import { TouchableOpacity } from 'react-native'
+import React from "react";
+import { StyledText } from "./styled";
+import PropTypes from "prop-types";
+import { TouchableOpacity } from "react-native";
 
-const DefaultText = props => {
-  const { text, onPress, children, ...rest } = props
+const DefaultText = (props) => {
+  const { text, onPress, children, ...rest } = props;
 
   return !!onPress ? (
     <TouchableOpacity onPress={onPress}>
@@ -16,8 +16,8 @@ const DefaultText = props => {
     <StyledText maxFontSizeMultiplier={1} {...rest}>
       {text || children}
     </StyledText>
-  )
-}
+  );
+};
 
 DefaultText.propTypes = {
   text: PropTypes.string,
@@ -26,7 +26,7 @@ DefaultText.propTypes = {
   themeColor: PropTypes.string,
   width: PropTypes.number,
   vertical: PropTypes.number,
-  align: PropTypes.oneOf(['left', 'center', 'right']),
+  align: PropTypes.oneOf(["left", "center", "right"]),
   type: PropTypes.string,
   onPress: PropTypes.func,
   positionAbsolute: PropTypes.bool,
@@ -34,6 +34,6 @@ DefaultText.propTypes = {
   mTop: PropTypes.number,
   mLeft: PropTypes.number,
   Garde: PropTypes.bool,
-}
+};
 
-export default DefaultText
+export default DefaultText;

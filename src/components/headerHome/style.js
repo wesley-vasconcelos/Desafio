@@ -10,6 +10,4 @@ export const FixRow = styled.View`
   justify-content: space-between;
   align-items: center;
   margin-top: ${40};
-
-
 `;

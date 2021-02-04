@@ -1,33 +1,28 @@
-import React, { useState } from "react";
-import { View } from "react-native";
-import DefaultText from "../../components/defaltText";
-import HeaderList from "../../components/headerList";
-import { Container, Product } from "./style";
+import React from "react";
+import { useSelector } from "react-redux";
+import * as Styled from "./style";
 
+const List = ({ navigation }) => {
+  const {
+    books: { list },
+  } = useSelector((value) => value);
 
-
-const List = () => {
   return (
-    <Container>
-        <HeaderList />
-        <Product>
-          <View></View>
-          <View>
-          <DefaultText
-          align="right"
-          mBottom={5}
-          width={75}
-          mLeft={10}
-          text={'Logo Design Love:'}
-          themeColor="TextBlack"
-          type="title2"
-        />
-
-          </View>
-
-        </Product>
-    
-    </Container>
+    <Styled.Container>
+      <Styled.List>
+        {list.map((item, index) => (
+          <Styled.Product
+            onPress={() => navigation.navigate("Detail", { data: item })}
+          >
+            <Styled.Image
+              source={{
+                uri: item?.volumeInfo?.imageLinks?.thumbnail,
+              }}
+            />
+          </Styled.Product>
+        ))}
+      </Styled.List>
+    </Styled.Container>
   );
 };
 
