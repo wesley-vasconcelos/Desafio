@@ -1,0 +1,32 @@
+{
+  "expo": {
+    "name": "Design Books",
+    "slug": "Design Books",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "splash": {
+      "image": "./assets/29302.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffe207"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/29302.png",
+        "backgroundColor": "#ffe207"
+      }
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    }
+  }
+}
