@@ -1,7 +1,13 @@
 import styled from "styled-components";
 
 export const Container = styled.View`
-flex: 0.4;
+flex: 1;
+background-color: ${(g) => g.theme.color.button.whitePure};
+align-items: center;
+`;
+export const Box = styled.View`
+flex: 1;
+width: 100%;
 background-color: ${(g) => g.theme.color.button.primary};
 align-items: center;
 `;
