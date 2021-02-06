@@ -5,7 +5,7 @@ export const REQUEST_LIST_BOOKS = "REQUEST_LIST_BOOKS";
 export const REQUEST_LIST_BOOKS_SUCCESS = "REQUEST_LIST_BOOKS_SUCCESS";
 
 export const { requestListBooks, requestListBooksSuccess } = createActions({
-  [REQUEST_LIST_BOOKS]: () => {},
+  [REQUEST_LIST_BOOKS]: (text) => text,
   [REQUEST_LIST_BOOKS_SUCCESS]: ({ list }) => ({ list }),
 });
 
@@ -15,9 +15,16 @@ export const { handleFavorites } = createActions({
   [HANDLE_FAVORITES]: (id) => ({ id }),
 });
 
+export const SET_LOADING = "SET_LOADING";
+
+export const { setLoading } = createActions({
+  [SET_LOADING]: (boolean) => boolean,
+});
+
 export const INITIAL_STATE = {
   list: [],
   favorites: [],
+  loading: false,
 };
 
 const reducer = handleActions(
@@ -30,9 +37,16 @@ const reducer = handleActions(
         },
       }
     ) => {
+      console.log(items)
       return {
         ...state,
         list: items,
+      };
+    },
+    [SET_LOADING]: (state, { payload }) => {
+      return {
+        ...state,
+        loading: payload,
       };
     },
     [HANDLE_FAVORITES]: (state, { payload: { id } }) => {

@@ -1,12 +1,17 @@
 import React, { useState } from "react";
 import DefaultText from "../defaltText/index.js";
-import { Container, FixRow } from "./style";
+import { Container, FixRow, Input } from "./style";
 import { formatedText } from "../../../utils/utils.js";
 import { Feather } from "@expo/vector-icons";
 import { Line } from "../line/index.js";
 import { View } from "react-native";
+import { TouchableOpacity } from "react-native";
+import { useDispatch } from "react-redux";
+import { requestListBooks } from "../../redux/books/index.js";
 
 const HeaderList = () => {
+  const [show, setShow] = useState(false);
+  const dispatch = useDispatch();
   return (
     <Container>
       <FixRow>
@@ -23,9 +28,23 @@ const HeaderList = () => {
           />
           <Line mLeft={10} align="center" width={40} />
         </View>
-
-        <Feather name="search" size={24} color="black" />
+        <TouchableOpacity onPress={() => setShow(!show)}>
+          <Feather
+            name={show ? "chevron-up" : "search"}
+            size={24}
+            color="black"
+          />
+        </TouchableOpacity>
       </FixRow>
+      {show && (
+        <Input
+          returnKeyType="search"
+          placeholder="Digite o nome do livro"
+          onSubmitEditing={(e) =>
+            dispatch(requestListBooks(e.nativeEvent.text))
+          }
+        />
+      )}
     </Container>
   );
 };

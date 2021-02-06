@@ -1,27 +1,32 @@
 import React from "react";
+import { Text } from "react-native";
 import { useSelector } from "react-redux";
 import * as Styled from "./style";
 
 const List = ({ navigation }) => {
   const {
-    books: { list },
+    books: { list, loading },
   } = useSelector((value) => value);
-
+  console.log("======>", list);
   return (
-    <Styled.Container>
-      <Styled.List>
-        {list.map((item, index) => (
-          <Styled.Product
-            onPress={() => navigation.navigate("Detail", { data: item })}
-          >
-            <Styled.Image
-              source={{
-                uri: item?.volumeInfo?.imageLinks?.thumbnail,
-              }}
-            />
-          </Styled.Product>
-        ))}
-      </Styled.List>
+    <Styled.Container center={loading}>
+      {loading ? (
+        <Text>Carregando...</Text>
+      ) : (
+        <Styled.List>
+          {list.map((item, index) => (
+            <Styled.Product
+              onPress={() => navigation.navigate("Detail", { data: item })}
+            >
+              <Styled.Image
+                source={{
+                  uri: item?.volumeInfo?.imageLinks?.thumbnail,
+                }}
+              />
+            </Styled.Product>
+          ))}
+        </Styled.List>
+      )}
     </Styled.Container>
   );
 };

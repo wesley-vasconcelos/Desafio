@@ -22,7 +22,7 @@ const Navigation = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(requestListBooks());
+    dispatch(requestListBooks("*"));
   }, []);
 
   return (

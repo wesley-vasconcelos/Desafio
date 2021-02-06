@@ -4,6 +4,11 @@ export const Container = styled.View`
   background-color: ${(g) => g.theme.color.button.primary};
   flex: 1;
   align-items: center;
+  ${({ center }) =>
+    center &&
+    css`
+      justify-content: center;
+    `}
 `;
 
 export const List = styled.View`
@@ -23,4 +28,3 @@ export const Image = styled.Image`
   height: 150px;
   margin: 15px 0;
 `;
-
