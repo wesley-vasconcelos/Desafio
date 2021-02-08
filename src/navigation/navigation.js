@@ -27,8 +27,7 @@ const Navigation = () => {
 
   return (
     <NavigationContainer>
-      <HeaderList />
-      <Stack.Navigator mode="card" initialRouteName="List">
+      <Stack.Navigator mode="card" initialRouteName="Home">
         <Stack.Screen name="Home" options={defaultOptions} component={Home} />
         <Stack.Screen name="List" options={defaultOptions} component={List} />
         <Stack.Screen

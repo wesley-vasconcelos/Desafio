@@ -8,6 +8,8 @@ import { handleFavorites } from "../../redux/books";
 import DefaultText from "../../components/defaltText";
 import Button from "../../components/button";
 import theme from "../../../theme";
+import HeaderHome from "../../components/headerHome";
+import HeaderList from "../../components/headerList";
 
 const Detail = ({ route }) => {
   const book = route?.params?.data;
@@ -21,6 +23,7 @@ const Detail = ({ route }) => {
   return (
     <ScrollView>
       <Styled.Container>
+        <HeaderList />
         <Styled.Box>
 
           <Styled.Details>

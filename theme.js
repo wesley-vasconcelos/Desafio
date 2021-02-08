@@ -3,7 +3,7 @@ import { getRelativeSize } from "./utils/utils.js";
 const colors = {
   primary: "#ffe207",
   primaryBlue: "#549ae6",
-  secundaryRed: "#e05568",
+  secundaryRed: "#d52048",
   TextBlack: "#322b01",
   default: "#2a333a",
   whitePure: "#ffffff",

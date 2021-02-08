@@ -8,14 +8,16 @@ import { View } from "react-native";
 import { TouchableOpacity } from "react-native";
 import { useDispatch } from "react-redux";
 import { requestListBooks } from "../../redux/books/index.js";
+import { useNavigation } from "@react-navigation/native";
 
 const HeaderList = () => {
   const [show, setShow] = useState(false);
   const dispatch = useDispatch();
+  const { goBack } = useNavigation();
   return (
     <Container>
       <FixRow>
-        <Feather name="arrow-left" size={24} color="black" />
+        <Feather onPress={goBack} name="arrow-left" size={24} color="black" />
         <View>
           <DefaultText
             align="center"
